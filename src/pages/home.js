@@ -4,7 +4,7 @@ export default function HomePage(){
 
     return(
         <div>
-            <h1 style={{color: "#031035"}}>HomePage</h1>
+            <h1 className="mt-16">HomePage</h1>
         </div>
     )
 }
