@@ -10,11 +10,12 @@
     margin-left: auto;
     padding-left: 30px;
     padding-right: 30px;
-    /* max-width: 500px;
-    width: 100%; */
+    max-width: 500px;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .loginpage-container .arrow-container{
@@ -32,6 +33,14 @@
 
 .loginpage-container img{
     position: relative;
-    margin-top: 40px;
+    margin-top: 50px;
     display: block;
+}
+
+
+
+@media (min-width: 500px){
+    .loginpage-container{
+        margin-top: 25px;
+    }
 }
