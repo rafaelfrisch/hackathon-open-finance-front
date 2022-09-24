@@ -8,8 +8,6 @@
     display: flex;
     padding-left: 30px;
     padding-right: 30px;
-    /* max-width: 500px;
-    width: 100%; */
     flex-direction: column;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,56 @@
+.faturaCliente-container{
+    max-width: 500px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.faturaCliente-container h2{
+    font-size: 16px;
+}
+
+.faturaCliente-container .fatura{
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faturaCliente-container .fatura .dateRange{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.faturaCliente-container .fatura .dateRange p,
+.faturaCliente-container .fatura #pFatura,
+.faturaCliente-container .fatura #pCredito{
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.faturaCliente-container .fatura #pNumberFatura{
+    font-size: 20px;
+}
+
+.faturaCliente-container .fatura .numberFatura{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.faturaCliente-container .fatura .creditoGerado{
+    display: flex;
+    flex-direction: row;
+}
+
+.faturaCliente-container .fatura .creditoGerado p{
+    margin-left: 5px;
+    font-size: 20px;
+}

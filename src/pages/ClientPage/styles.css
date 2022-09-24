@@ -1,0 +1,22 @@
+.clientPage-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clientPage-container .cartao-container{
+    max-width: 500px;
+    margin-top: 20px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.clientPage-container .cartao-container p{
+    margin-left: 10px;
+}
