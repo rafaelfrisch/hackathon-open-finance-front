@@ -1,0 +1,50 @@
+.saldoCliente-container{
+    max-width: 500px;
+    margin-top: 20px;
+    width: 100%;
+    height: 152px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.saldoCliente-container h2{
+    font-size: 16px;
+}
+
+.saldoCliente-container .saldo-container{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    margin-top: 10px;
+}
+
+.saldoCliente-container .saldo-container #logosmallIcon{
+    margin-right: 20px;
+    margin-top: -20px;
+}
+
+.saldoCliente-container .saldo-container .saldoNumber-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.saldoCliente-container .saldo-container .saldoNumber-container #pSaldo{
+    font-size: 38px;
+    color: #4d4d4d;
+    margin-bottom: -10px;
+}
+
+.saldoCliente-container .saldo-container .saldoNumber-container section{
+    border-radius: 10px;
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    background-color: #CBFF8C;
+}
+
+.saldoCliente-container .saldo-container .saldoNumber-container section p{
+    font-size: 10px;
+}

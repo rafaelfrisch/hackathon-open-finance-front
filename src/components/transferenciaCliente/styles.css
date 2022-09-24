@@ -1,0 +1,52 @@
+.transferenciaCliente-container{
+    max-width: 500px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.transferenciaCliente-container h2{
+    font-size: 16px;
+}
+
+.transferenciaCliente-container .transferencia{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.transferenciaCliente-container .transferencia .transferencia-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 250px;
+    width: 90%;
+    height: 82px;
+    border-radius: 5px;
+}
+
+.transferenciaCliente-container .transferencia #enviar-credito{
+    background-color: #CBFF8C;
+    margin-right: 5px;
+}
+
+.transferenciaCliente-container .transferencia #receber-credito{
+    background-color: #73F689;
+    margin-left: 5px;
+}
+
+.transferenciaCliente-container .saque-compra{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.transferenciaCliente-container .saque-compra p{
+    margin-left: 10px;
+}
