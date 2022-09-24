@@ -1,4 +1,63 @@
 .home-container{
-    /* background-image: linear-gradient("#73F689", "#CBFF8C"); */
-    background-image: linear-gradient(yellow, red);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #CBFF8C, #73F689);
+}
+
+.home-container div{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container div img{
+    width: 150px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.home-container div h1{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.home-container div p{
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.home-container div button{
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 40px;
+    transition: filter 0.3s;
+}
+
+.home-container div #register{
+    margin-top: 20px;
+    background-color: #FFF;
+    text-align: center;
+}
+
+.home-container div #login{
+    /* background-color: #CBFF8C; */
+    text-align: center;
+    border: solid 1.5px;
+}
+
+.home-container div button:hover{
+    filter: brightness(75%);
+    cursor: pointer;
 }
