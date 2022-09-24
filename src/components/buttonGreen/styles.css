@@ -2,5 +2,12 @@
     background-image: linear-gradient(to right, #73F689, #CBFF8C);
     width: 200px;
     height: 40px;
+    margin-top: 20px;
     border-radius: 20px;
+    transition: filter 0.3s;
+    outline: none;
+}
+
+.buttongreen-container button:hover{
+    filter: brightness(75%);
 }

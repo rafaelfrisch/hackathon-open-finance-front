@@ -1,0 +1,20 @@
+.input-container{
+    max-width: 300px;
+    margin-top: 15px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container p{
+    font-size: 15px;
+}
+
+.input-container input{
+    border: solid 1.5px;
+    border-radius: 10px;
+    height: 40px;
+    outline: none;
+    color: #4d4d4d;
+    padding: 5px;
+}
