@@ -1,0 +1,6 @@
+.buttongreen-container button{
+    background-image: linear-gradient(to right, #73F689, #CBFF8C);
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+}
