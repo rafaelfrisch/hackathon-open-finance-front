@@ -1,9 +1,13 @@
+.buttongreen-container{
+    width: calc(100% - 40px);
+}
+
 .buttongreen-container button{
     background-image: linear-gradient(to right, #73F689, #CBFF8C);
-    width: 200px;
-    height: 40px;
+    width: 100%;
+    height: 58px;
     margin-top: 20px;
-    border-radius: 20px;
+    border-radius: 29px;
     transition: filter 0.3s;
     outline: none;
 }

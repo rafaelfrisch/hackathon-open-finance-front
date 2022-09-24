@@ -11,7 +11,7 @@ export default function HomePage(){
                 <img src={Arvore} />
                 <h1>Carbon Cash</h1>
                 <p>Save Carbon Earn Money</p>
-                <Link to="/"><button id="register">Começar agora</button></Link>
+                <Link to="register"><button id="register">Começar agora</button></Link>
                 <Link to="login"><button id="login">LogIn</button></Link>
             </div>
         </div>

@@ -3,10 +3,14 @@ import ButtonGreen from '../../components/buttonGreen'
 import Arvore from '../../assets/logo.svg'
 import './styles.css'
 import InputContainer from '../../components/inputContainer/indes'
+import {IoIosArrowBack} from "react-icons/io"
+import { useNavigate } from 'react-router-dom'
 
 export default function LoginPage(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const history = useNavigate();
 
     async function handleSubmit(){
         console.log("entrar")
@@ -14,6 +18,12 @@ export default function LoginPage(){
 
     return(
         <div className="loginpage-container">
+            <div className="arrow-container">
+                <IoIosArrowBack className="logo-arrow"
+                onClick={ () => history(-1)}
+                />
+            </div>
+            
             <img src={Arvore} />
             <h1>Carbon Cash</h1>
             <p>Save Carbon Earn Money</p>
@@ -32,6 +42,7 @@ export default function LoginPage(){
                 value: password
             }} />
             <ButtonGreen text={"Entrar"} handleSubmit={handleSubmit} />
+            
         </div>
     )
 }

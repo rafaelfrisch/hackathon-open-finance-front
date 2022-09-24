@@ -1,11 +1,13 @@
 .loginpage-container{
     position: absolute;
+    top: 28%;
     left: 0;
-    top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     right: 0;
     display: flex;
+    margin-right: auto;
+    margin-left: auto;
     padding-left: 30px;
     padding-right: 30px;
     /* max-width: 500px;
@@ -13,4 +15,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.loginpage-container .arrow-container{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    justify-content: left;
+    width: 100%;
+}
+
+.loginpage-container .logo-arrow{
+    font-size: 35px;
+    color: #B6B1AC
+}
+
+.loginpage-container img{
+    position: relative;
+    margin-top: 40px;
+    display: block;
 }
