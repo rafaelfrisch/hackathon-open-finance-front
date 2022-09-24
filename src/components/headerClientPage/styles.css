@@ -1,0 +1,35 @@
+.headerClient-container{
+    max-width: 500px;
+    width: 100%;
+    height: 152px;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    background-image: linear-gradient(to right, #CBFF8C, #73F689);
+}
+
+.headerClient-container h2{
+    font-size: 16px;
+}
+
+.headerClient-container .icon-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.headerClient-container .icon-container section{
+    max-width: 70px;
+    width: 100%;
+    display: flex;
+}
+
+.headerClient-container .icon-container section img{
+    margin-left: 15px;
+}
