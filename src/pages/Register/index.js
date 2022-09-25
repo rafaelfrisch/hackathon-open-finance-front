@@ -58,6 +58,7 @@ export default function Register(){
         })
 
         const { user, token } = userData
+        console.log(userData)
 
         localStorage.setItem("logged", 1)
         localStorage.setItem("cpf", user.cpf)
