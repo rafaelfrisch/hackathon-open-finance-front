@@ -9,6 +9,7 @@ import EnviarCreditos from './pages/EnviarCreditos/index'
 import ReceberCreditos from './pages/ReceberCreditos/index'
 import SacarCreditos from './pages/SacarCreditos/index'
 import ProdutosEServicos from './pages/ProdutosEServicos/index'
+import ChartPage from './pages/Chart';
 
 const RoutesPages = () => (
     <BrowserRouter>
@@ -21,6 +22,7 @@ const RoutesPages = () => (
             <Route exact path="receberCreditos" element={<ReceberCreditos />} />
             <Route exact path="sacarCreditos" element={<SacarCreditos />} />
             <Route exact path="produtosEServicos" element={<ProdutosEServicos />} />
+            <Route exact path ="chart" element={<ChartPage/>}/>
         </Routes>
     </BrowserRouter>       
 );

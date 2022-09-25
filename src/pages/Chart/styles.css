@@ -1,0 +1,82 @@
+body{
+    background: #FFFFFF;
+    color: #4B4947;
+    
+}
+
+.chartpage-container{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding-top: 5%;
+    background: #FBFBFB;
+    width: 100%;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.chartpage-container .arrow-container{
+    justify-content: left;
+    width: 100%;
+    margin-left: -15px;
+    transition: filter 0.3s;
+    margin-bottom: 15px;
+}
+
+.chartpage-container .arrow-container:hover{
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+.chartpage-container .logo-arrow{
+    font-size: 35px;
+    color: #B6B1AC
+}
+
+.chartpage-container .question-container{
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    height: 60px;
+}
+
+.chartpage-container .question-container  .arrow-down{
+    font-size: 35px;
+    color: #B6B1AC
+}
+
+.chartpage-container .ans-container{
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.chartpage-container h1{
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+}
+.chartpage-container p{
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chart{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
