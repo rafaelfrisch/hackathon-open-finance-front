@@ -5,6 +5,8 @@ import './styles.css'
 import InputContainer from '../../components/inputContainer/indes'
 import {IoIosArrowBack} from "react-icons/io"
 import { useNavigate } from 'react-router-dom'
+import signInService from '../../services/login';
+
 
 export default function LoginPage(){
     const [email, setEmail] = useState("")
@@ -13,7 +15,16 @@ export default function LoginPage(){
     const history = useNavigate();
 
     async function handleSubmit(){
-        console.log("entrar")
+        const userData = await signInService({
+          email,
+          password,
+        });
+
+        localStorage.setItem("logged", 1)
+        localStorage.setItem("cpf", userData.cpf)
+        localStorage.setItem("token", userData.token)
+        
+        history("client")
     }
 
     return(
