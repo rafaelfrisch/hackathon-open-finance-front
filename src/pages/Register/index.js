@@ -4,6 +4,7 @@ import { useState } from "react"
 import {IoIosArrowBack} from "react-icons/io"
 import "./styles.css"
 import { useNavigate } from "react-router-dom"
+import signUpService from '../../services/signup';
 
 export default function Register(){
     const [name, setName] = useState("");
@@ -49,7 +50,19 @@ export default function Register(){
         if(!validateCPF || !validateEmail){
             return;
         }
+        const userData = await signUpService({
+          name,
+          cpf,
+          email,
+          password,
+        })
+
+        const { user, token } = userData
+
         localStorage.setItem("logged", 1)
+        localStorage.setItem("cpf", user.cpf)
+        localStorage.setItem("token", token)
+        
         history("/client")
     }
 
