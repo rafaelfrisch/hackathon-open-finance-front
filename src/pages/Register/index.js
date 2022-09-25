@@ -11,25 +11,46 @@ export default function Register(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPass, setRepeatPass] = useState("");
+    const [checkbox, setCheckbox] = useState(false)
 
     const history = useNavigate();
 
-    function emptyValues(){
-        setName("");
-        setCpf("");
-        setEmail("");
-        setPassword("");
-        setRepeatPass("");
+    function validateCPF(){
+        if(cpf.length !== 11){
+            alert("CPF inválido")
+            return false
+        }
+        return true
+    }
+
+    function validateEmail(){
+        if(!email.includes("@") || !email.includes(".com")){
+            alert("Email inválido")
+            return false
+        }
+        return true
     }
 
     async function handleSubmit(){
+        if(!name || !cpf || !email || !password || !repeatPass){
+            alert("Os campos abaixo não devem ser vazios")
+            return;
+        }
         if(password != repeatPass){
             setPassword("");
             setRepeatPass("");
             alert("A senha não confere!");
             return;
         }
-        alert("a")
+        if(!checkbox){
+            alert("Os termos devem ser aceitos")
+            return
+        }
+        if(!validateCPF || !validateEmail){
+            return;
+        }
+        localStorage.setItem("logged", 1)
+        history("/client")
     }
 
     return(
@@ -48,14 +69,14 @@ export default function Register(){
 
             <InputContainer text={"CPF"} inputProps={{
                 placeholder: "Digite seu CPF (apenas números)",
-                type: "text",
+                type: "number",
                 onChange: (e) => setCpf(e.target.value),
                 value: cpf
             }} />
 
             <InputContainer text={"Email"} inputProps={{
                 placeholder: "Digite seu email",
-                type: "text",
+                type: "email",
                 onChange: (e) => setEmail(e.target.value),
                 value: email
             }} />
@@ -74,7 +95,7 @@ export default function Register(){
                 value: repeatPass
             }} />
             <div className="check-container">
-                <input type="checkbox"/>
+                <input type="checkbox" value={checkbox} onChange={e => setCheckbox(!checkbox)}/>
                 <p>Autorizar o app a utilizar os dados em open finance.</p>
             </div>
 
