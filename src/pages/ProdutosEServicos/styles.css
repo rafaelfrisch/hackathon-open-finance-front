@@ -1,0 +1,73 @@
+body{
+    background-color: #f5f5f5;
+}
+
+.produtosEServicos-container{
+    position: absolute;
+    top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.produtosEServicos-container .arrow-container{
+    justify-content: left;
+    width: 100%;
+    transition: filter 0.3s;
+}
+
+.produtosEServicos-container .arrow-container:hover{
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+.produtosEServicos-container .logo-arrow{
+    font-size: 35px;
+    color: #B6B1AC
+}
+
+.produtosEServicos-container h2{
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.produtosEServicos-container p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.produtosEServicos-container .sacar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.produtosEServicos-container .sacar select{
+    background-color: #CBFF8C;
+    height: 20px;
+    border-radius: 10px;
+    padding: 1px;
+    font-size: 13px;
+}
+
+.produtosEServicos-container .sacar select #fatura{
+    margin-left: 40px;
+}
+
+@media (min-width: 500px){
+    .produtosEServicos-container{
+        margin-top: 25px;
+    }
+}

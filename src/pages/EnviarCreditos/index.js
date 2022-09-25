@@ -21,7 +21,7 @@ export default function EnviarCreditos(){
             <h2>Enviar créditos</h2>
             <p>Digite o código da conta de destino</p>
             <section className="codigoConta">
-                <p>0000 0000 0000 0000</p>
+                <input type="text" placeholder="0000 0000 0000 0000" />
             </section>
             <h2>Digite o valor em créditos a ser transferido</h2>
             <span>Saldo atual: {saldoAtual}</span>

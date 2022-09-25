@@ -1,0 +1,42 @@
+.produto-container{
+    max-width: 500px;
+    width: 100%;
+    height: 39px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.produto-container span{
+    font-size: 10px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.produto-container p{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.produto-container .logoData{
+    display: flex;
+    flex-direction: row;
+}
+
+.produto-container .logoData .dataNome{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: center;
+}
+
+.produto-container .preco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
