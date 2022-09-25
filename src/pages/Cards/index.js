@@ -33,6 +33,14 @@ export default function CardsPage(){
          handleCards();
     },[]);
 
+    function getDateStr(date){
+        const vecDate = String(date).split("-");
+        const year = vecDate[0];
+        const month = parseInt(vecDate[1]);
+        const day = parseInt(vecDate[2])
+        const nexMonth = month >= 12? 1 : month +1
+        return day + "/" + month + " - " + day + "/" + nexMonth;
+    }
     const history = useNavigate();
     return(
         <div className="cardspage-container">
@@ -49,7 +57,7 @@ export default function CardsPage(){
                     </div>
                     
                     <div className="card-info">
-                        <p className="date-info">{lastDate} </p>
+                        <p className="date-info">{getDateStr(lastDate)} </p>
                         <p className="label-info">Fatura atual</p>
                         <p className="info-money">R${amount}</p>
                         <p className="label-info">Crédito a ser gerado</p>
