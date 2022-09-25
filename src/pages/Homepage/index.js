@@ -12,7 +12,7 @@ export default function HomePage(){
                 <h1>Carbon Cash</h1>
                 <p>Save Carbon Earn Money</p>
                 <Link to="register"><button id="register">Começar agora</button></Link>
-                <Link to="login"><button id="login">LogIn</button></Link>
+                <Link to="login"><button id="login">Login</button></Link>
             </div>
         </div>
     )

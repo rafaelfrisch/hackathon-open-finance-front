@@ -14,10 +14,12 @@ export default function ClientPage(){
             <SaldoCliente saldo={"500.00"} saldoBrl={"500,00"} />
             <TransferenciaCliente />
             <FaturasCliente faturaAtual={300} rangeDate="03 set - 03 out" creditoGanho={"50.00"} />
-            <section className="cartao-container">
-                <img src={CartaoIcon} />
-                <p>Meus cartões</p>
-            </section>
+            <div className="cartao-container">
+                <section>
+                    <img src={CartaoIcon} />
+                    <p>Meus cartões</p>
+                </section>
+            </div>
         </div>
     )
 }
