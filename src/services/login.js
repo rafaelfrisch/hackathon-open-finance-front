@@ -7,7 +7,6 @@ const signIn = async (email, password) => {
     email,
     password,
   }).then(response =>{
-    console.log(response.data)
     ans = response.data;
   }).catch(err => console.log(err));
   

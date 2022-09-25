@@ -44,6 +44,7 @@ export default function ClientPage(){
             localStorage.setItem("creditCardAccountId", response.data.creditCart.creditCardAccountId)
             localStorage.setItem("organizationId", response.data.account.organizationId)
             localStorage.setItem("hash", response.data.adicionalAccountData.accountHash)
+            localStorage.setItem("balance", response.data.adicionalAccountData.balance)
             let res = await requestGet("/users/creditcarddata/" + response.data.creditCart.creditCardAccountId + "?organizationId=" + response.data.account.organizationId + "&customerId=" + response.data.account.customerId, token)
             if(res.status == 200){
                 let billId = getLatest(res.data)

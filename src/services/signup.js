@@ -8,7 +8,6 @@ const signUp = async (data) => {
   await axios.post(apiUrl + '/users', {
     ...data,
   }).then(response =>{
-    console.log(response.data)
     ans = response.data;
   }).catch(err => console.log(err));
 
