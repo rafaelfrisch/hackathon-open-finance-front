@@ -4,20 +4,28 @@
 
 body {
   margin: 0;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Montserrat'
+  font-family: 'Montserrat', sans-serif
 }
 
 h1, h2, h3, h4, p, span{
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   color: #4b4947;
 }
 
 button, input{
   outline: none;
+}
+
+a{
+  outline: none;
+}
+
+a:hover{
+  cursor: pointer;
 }

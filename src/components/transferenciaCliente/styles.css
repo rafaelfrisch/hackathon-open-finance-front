@@ -20,7 +20,11 @@
     margin-top: 10px;
 }
 
-.transferenciaCliente-container .transferencia .transferencia-box{
+.transferenciaCliente-container .transferencia a{
+    width: 100%;
+}
+
+.transferenciaCliente-container .transferencia a .transferencia-box{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -31,12 +35,12 @@
     border-radius: 5px;
 }
 
-.transferenciaCliente-container .transferencia #enviar-credito{
+.transferenciaCliente-container .transferencia a #enviar-credito{
     background-color: #CBFF8C;
     margin-right: 5px;
 }
 
-.transferenciaCliente-container .transferencia #receber-credito{
+.transferenciaCliente-container .transferencia a #receber-credito{
     background-color: #73F689;
     margin-left: 5px;
 }

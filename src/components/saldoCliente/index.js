@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.css'
 import LogoSmall from '../../assets/logoSmall1.svg'
 import RigthIcon from "../../assets/rigthIcon.svg"
+import { Link } from 'react-router-dom'
 
 export default function SaldoCliente({saldo, saldoBrl}){
     return(
@@ -11,10 +12,12 @@ export default function SaldoCliente({saldo, saldoBrl}){
                 <img id="logosmallIcon" src={LogoSmall} />
                 <section className="saldoNumber-container">
                     <p id="pSaldo">{saldo}</p>
-                    <section>
-                        <p>{saldoBrl} BRL</p>
-                        <img src={RigthIcon} />
-                    </section>
+                    <Link to="/chart">
+                        <section>
+                            <p>{saldoBrl} BRL</p>
+                            <img src={RigthIcon} />
+                        </section>
+                    </Link>
                 </section>
             </section>
         </div>
