@@ -16,6 +16,7 @@
 .faturaCliente-container .fatura{
     background-color: #f5f5f5;
     margin-top: 10px;
+    margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
     display: flex;

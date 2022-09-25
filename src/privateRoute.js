@@ -1,19 +1,13 @@
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
-import LoginPage from './pages/Login/index'
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({ element: Component, ...rest }) => {
-    let logged = localStorage.getItem("logged") 
-    if( logged == 1 || logged == "1" ){
-        return(
-            <Route {...rest} element={Component} />
-        )
+const ProtectedRoute = ({ user, children }) => {
+    let local = localStorage.getItem("logged")
+    if (!(local == 1) || !(local == "1")) {
+      return <Navigate to="/login" replace />;
     }
-    
-    return(
-        <Route {...rest} element={LoginPage} />
-        
-    )
-}
   
-export default PrivateRoute
+    return children;
+  };
+  
+export default ProtectedRoute
