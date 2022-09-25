@@ -48,7 +48,7 @@ export default function ProdutoComponent({name, data, preco}) {
             </section>
             <section className="preco">
                 <span>R$ {preco}</span>
-                <p>{preco/2}</p>
+                <p>{Math.trunc(preco/3)}</p>
             </section>
         </div>
     )

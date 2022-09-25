@@ -7,14 +7,15 @@ import CartaoIcon from '../../assets/cartaoIcon.svg'
 import './styles.css'
 import { requestGet } from '../../services/request'
 import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
 
 export default function ClientPage(){
     const [view, setView] = useState(true)
     const [nome, setNome] = useState("José Silva")
-    const [saldo, setSaldo] = useState(500)
+    const [saldo, setSaldo] = useState(0)
     const [faturaAtual, setFaturaAtual] = useState(0)
     const [rangeDate, setRangeDate] = useState("")
-    const [creditoGanho, setCreditoGanho] = useState(50)
+    const [creditoGanho, setCreditoGanho] = useState(0)
 
     const navigate = useNavigate()
 
@@ -23,9 +24,7 @@ export default function ClientPage(){
         let dateBig = ""
         let billId = ""
         listDates.map(date => {
-            // console.log("\naqui dentro, temos em 5:", date.dueDate.replaceAll("-", ""))
-            if(parseInt(date.dueDate.replace("-", "")) > biggest){
-                // console.log("\nentrei na condição")
+            if(parseInt(date.dueDate.replaceAll("-", "")) > biggest){
                 biggest = parseInt(date.dueDate.replaceAll("-", ""))
                 dateBig = date.dueDate
                 billId = date.billId
@@ -40,7 +39,6 @@ export default function ClientPage(){
         let token = localStorage.getItem("token")
         let response = await requestGet("/users/accountdata/" + cpf.replaceAll(".", "").replaceAll("-", ""), token)
         if(response.status == 200){
-            // console.log("\naqui dentro: ", response.data)
             setNome(response.data.adicionalAccountData.name)
             setSaldo(response.data.adicionalAccountData.balance)
             localStorage.setItem("creditCardAccountId", response.data.creditCart.creditCardAccountId)
@@ -48,17 +46,14 @@ export default function ClientPage(){
             localStorage.setItem("hash", response.data.adicionalAccountData.accountHash)
             let res = await requestGet("/users/creditcarddata/" + response.data.creditCart.creditCardAccountId + "?organizationId=" + response.data.account.organizationId + "&customerId=" + response.data.account.customerId, token)
             if(res.status == 200){
-                // console.log("\naqui temos2: ", res.data)
                 let billId = getLatest(res.data)
                 let responseFinance = await requestGet("/users/creditcardbillstransactions/" + response.data.creditCart.creditCardAccountId + "/" + billId + "?organizationId=" + response.data.account.organizationId + "&customerId=" + response.data.account.customerId, token)
-                // console.log("\nno ultimo, temos: ", responseFinance)
                 let faturaAtual = 0
                 responseFinance.data.map(fatura => {
                     faturaAtual = faturaAtual + fatura.brazilianAmount
                 })
-                console.log("\naqui no erro:", faturaAtual.toFixed(2))
-                setFaturaAtual(faturaAtual.toFixed(2))
-                setCreditoGanho(Math.trunc(faturaAtual/2))
+                setFaturaAtual(faturaAtual.toFixed(3))
+                setCreditoGanho(Math.trunc(faturaAtual/3))
             }else{
                 alert("Houve um erro no momento, tente novamente mais tarde")
                 navigate("/login")
@@ -76,14 +71,16 @@ export default function ClientPage(){
     return(
         <div className="clientPage-container">
             <HeaderClientPage name={nome} view={view} setView={setView} /> 
-            <SaldoCliente saldo={view ? saldo : "****"} saldoBrl={view ? saldo : "****"} />
+            <SaldoCliente view={view} saldo={view ? saldo : "****"} saldoBrl={view ? saldo : "****"} />
             <TransferenciaCliente />
             <FaturasCliente faturaAtual={view ? faturaAtual : "****"} rangeDate={rangeDate} creditoGanho={view ? creditoGanho : "****"} />
             <div className="cartao-container">
-                <section>
-                    <img src={CartaoIcon} />
-                    <p>Meus cartões</p>
-                </section>
+                <Link to="/cards">
+                    <section>
+                        <img src={CartaoIcon} />
+                        <p>Meus cartões</p>
+                    </section>
+                </Link>
             </div>
         </div>
     )

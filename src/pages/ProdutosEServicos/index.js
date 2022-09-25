@@ -20,6 +20,23 @@ export default function ProdutosEServicos(){
     const [faturaSelected, setFaturaSelected] = useState("")
     const [fatura, setFatura] = useState([])
 
+    // function getLatest(listDates){
+    //     let biggest = 0
+    //     let dateBig = ""
+    //     let billId = ""
+    //     let idAux = -1
+    //     listDates.map(date => {
+    //         if(parseInt(date.dueDate.replaceAll("-", "")) > biggest){
+    //             biggest = parseInt(date.dueDate.replaceAll("-", ""))
+    //             dateBig = date.dueDate
+    //             billId = date.billId
+    //         }
+    //         idAux = idAux + 1
+    //     })
+    //     console.log("\ntemos:", dateBig)
+    //     return [billId, idAux]
+    // }
+
     async function getMesFatura(){
         let token = localStorage.getItem("token")
         let cpf = localStorage.getItem("cpf")
@@ -28,23 +45,22 @@ export default function ProdutosEServicos(){
         let res = await requestGet("/users/creditcarddata/" + accountId + "?organizationId=" + orgId + "&customerId=" + cpf, token)
         if(res.status == 200){
             setMesFatura(res.data)
-            setFaturaSelected(res.data[0].billId)
+            getProdutos(res.data[0].billId)
         }else{
             alert("Não foi possível carregar alguns dados")
             history("/login")
         }
     }
 
-    async function getProdutos(){
+    async function getProdutos(billId){
         let token = localStorage.getItem("token")
         let cpf = localStorage.getItem("cpf")
         let accountId = localStorage.getItem("creditCardAccountId")
         let orgId = localStorage.getItem("organizationId")
         console.log("\nantes")
-        let res = await requestGet("/users/creditcardbillstransactions/" + accountId + "/" + faturaSelected + "?organizationId=" + orgId + "&customerId=" + cpf, token)
+        let res = await requestGet("/users/creditcardbillstransactions/" + accountId + "/" + billId + "?organizationId=" + orgId + "&customerId=" + cpf, token)
         console.log("\ndepois: ", res.data)
         if(res.status == 200){
-            console.log("\ndepois do status:", res.data)
             setFatura(res.data)
         }else{
             alert("Houve um erro")
@@ -54,11 +70,6 @@ export default function ProdutosEServicos(){
     useState(() => {
         getMesFatura()
     }, [])
-
-    useState(() => {
-        console.log("\n nesse useeffect")
-        getProdutos()
-    }, [faturaSelected])
 
     return(
         <div className="produtosEServicos-container">
@@ -75,9 +86,9 @@ export default function ProdutosEServicos(){
                         <option key="ordenacao" value={option.id}>{option.name}</option>
                     ))}
                 </select>
-                <select id="fatura" value={faturaSelected} onChange={e => {
+                <select id="fatura" onChange={e => {
                     console.log("\ndentro do onchange: ", e.target.value)
-                    setFaturaSelected(e.target.value)
+                    getProdutos(e.target.value)
                 }}>
                     {mesFatura.map(option => (
                         <option key="fatura" value={option.billId}>{option.dueDate}</option>
@@ -86,7 +97,6 @@ export default function ProdutosEServicos(){
             </section>
             {
                 fatura.map(produto => {
-                    console.log("\naqui temos o produto: ", produto)
                     return (<ProdutoComponent 
                         name = {produto.transactionName}
                         data = {produto.transactionDate}
