@@ -3,6 +3,7 @@ import './styles.css'
 import {IoIosArrowBack} from "react-icons/io"
 import ProdutoComponent from '../../components/produto'
 import { useNavigate } from 'react-router-dom'
+import { requestGet } from '../../services/request'
 
 export default function ProdutosEServicos(){
 
@@ -13,33 +14,51 @@ export default function ProdutosEServicos(){
     const ordenacao = [{
         name: "Ordenar por n° de créditos",
         id: 0
-    },
-    {
-        name: "Ordenar por ordem alfabética",
-        id: 1
     }]
 
-    const mesFatura = [{
-        name: "Setembro",
-        id: 0
-    },
-    {
-        name: "Outubro",
-        id: 1
-    }]
+    const [mesFatura, setMesFatura] = useState([])
+    const [faturaSelected, setFaturaSelected] = useState("")
+    const [fatura, setFatura] = useState([])
 
-    const fatura = [
-        {
-            name: "Milhagem",
-            data: "01/09",
-            preco: 1250
-        },
-        {
-            name: "Restaurante",
-            data: "03/09",
-            preco: 100
+    async function getMesFatura(){
+        let token = localStorage.getItem("token")
+        let cpf = localStorage.getItem("cpf")
+        let accountId = localStorage.getItem("creditCardAccountId")
+        let orgId = localStorage.getItem("organizationId")
+        let res = await requestGet("/users/creditcarddata/" + accountId + "?organizationId=" + orgId + "&customerId=" + cpf, token)
+        if(res.status == 200){
+            setMesFatura(res.data)
+            setFaturaSelected(res.data[0].billId)
+        }else{
+            alert("Não foi possível carregar alguns dados")
+            history("/login")
         }
-    ]
+    }
+
+    async function getProdutos(){
+        let token = localStorage.getItem("token")
+        let cpf = localStorage.getItem("cpf")
+        let accountId = localStorage.getItem("creditCardAccountId")
+        let orgId = localStorage.getItem("organizationId")
+        console.log("\nantes")
+        let res = await requestGet("/users/creditcardbillstransactions/" + accountId + "/" + faturaSelected + "?organizationId=" + orgId + "&customerId=" + cpf, token)
+        console.log("\ndepois: ", res.data)
+        if(res.status == 200){
+            console.log("\ndepois do status:", res.data)
+            setFatura(res.data)
+        }else{
+            alert("Houve um erro")
+        }
+    }
+
+    useState(() => {
+        getMesFatura()
+    }, [])
+
+    useState(() => {
+        console.log("\n nesse useeffect")
+        getProdutos()
+    }, [faturaSelected])
 
     return(
         <div className="produtosEServicos-container">
@@ -56,20 +75,24 @@ export default function ProdutosEServicos(){
                         <option key="ordenacao" value={option.id}>{option.name}</option>
                     ))}
                 </select>
-                <select id="fatura">
+                <select id="fatura" value={faturaSelected} onChange={e => {
+                    console.log("\ndentro do onchange: ", e.target.value)
+                    setFaturaSelected(e.target.value)
+                }}>
                     {mesFatura.map(option => (
-                        <option key="fatura" value={option.id}>{option.name}</option>
+                        <option key="fatura" value={option.billId}>{option.dueDate}</option>
                     ))}
                 </select>
             </section>
             {
-                fatura.map(produto => (
-                    <ProdutoComponent 
-                        name = {produto.name}
-                        data = {produto.data}
-                        preco = {produto.preco}
-                    />
-                ))
+                fatura.map(produto => {
+                    console.log("\naqui temos o produto: ", produto)
+                    return (<ProdutoComponent 
+                        name = {produto.transactionName}
+                        data = {produto.transactionDate}
+                        preco = {produto.brazilianAmount}
+                    />)
+                })
             }
         </div>
     )

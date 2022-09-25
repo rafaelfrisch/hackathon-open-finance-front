@@ -15,10 +15,17 @@ export default function FaturasCliente({rangeDate, faturaAtual, creditoGanho}){
                         <img src={RigthIcon} />
                     </section>
                     <p id="pFatura">Fatura atual</p>
-                    <section className="numberFatura">
-                        <p id="pNumberFatura">R$ {faturaAtual}</p>
-                        <p id="pCents">,00</p>
-                    </section>
+                    {
+                        faturaAtual === "****"?
+                        <section className="numberFatura">
+                            <p id="pNumberFatura">R$ ****</p>
+                            <p id="pCents">,00</p>
+                        </section>:
+                        <section className="numberFatura">
+                            <p id="pNumberFatura">R$ {Math.trunc(faturaAtual)}</p>
+                            <p id="pCents">,{Math.trunc((faturaAtual*100)%100)}</p>
+                        </section>
+                    }
                     <p id="pCredito">Crédito a ser gerado</p>
                     <section className="creditoGerado">
                         <img src={LogoSmall2} />
