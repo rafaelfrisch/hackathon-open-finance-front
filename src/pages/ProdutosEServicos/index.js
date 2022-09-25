@@ -25,9 +25,7 @@ export default function ProdutosEServicos(){
         let cpf = localStorage.getItem("cpf")
         let accountId = localStorage.getItem("creditCardAccountId")
         let orgId = localStorage.getItem("organizationId")
-        console.log("\naqui antes")
         let res = await requestGet("/users/creditcarddata/" + accountId + "?organizationId=" + orgId + "&customerId=" + cpf, token)
-        console.log("\ndepois", res.data)
         if(res.status == 200){
             setMesFatura(res.data)
             setFaturaSelected(res.data[0].billId)
@@ -46,6 +44,7 @@ export default function ProdutosEServicos(){
         let res = await requestGet("/users/creditcardbillstransactions/" + accountId + "/" + faturaSelected + "?organizationId=" + orgId + "&customerId=" + cpf, token)
         console.log("\ndepois: ", res.data)
         if(res.status == 200){
+            console.log("\ndepois do status:", res.data)
             setFatura(res.data)
         }else{
             alert("Houve um erro")
@@ -76,7 +75,10 @@ export default function ProdutosEServicos(){
                         <option key="ordenacao" value={option.id}>{option.name}</option>
                     ))}
                 </select>
-                <select id="fatura" value={faturaSelected} onChange={e => setFaturaSelected(e.target.value)}>
+                <select id="fatura" value={faturaSelected} onChange={e => {
+                    console.log("\ndentro do onchange: ", e.target.value)
+                    setFaturaSelected(e.target.value)
+                }}>
                     {mesFatura.map(option => (
                         <option key="fatura" value={option.billId}>{option.dueDate}</option>
                     ))}

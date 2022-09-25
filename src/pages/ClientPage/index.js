@@ -12,7 +12,7 @@ export default function ClientPage(){
     const [view, setView] = useState(true)
     const [nome, setNome] = useState("José Silva")
     const [saldo, setSaldo] = useState(500)
-    const [faturaAtual, setFaturaAtual] = useState(300)
+    const [faturaAtual, setFaturaAtual] = useState(0)
     const [rangeDate, setRangeDate] = useState("")
     const [creditoGanho, setCreditoGanho] = useState(50)
 
@@ -41,8 +41,11 @@ export default function ClientPage(){
         let response = await requestGet("/users/accountdata/" + cpf.replaceAll(".", "").replaceAll("-", ""), token)
         if(response.status == 200){
             // console.log("\naqui dentro: ", response.data)
+            setNome(response.data.adicionalAccountData.name)
+            setSaldo(response.data.adicionalAccountData.balance)
             localStorage.setItem("creditCardAccountId", response.data.creditCart.creditCardAccountId)
             localStorage.setItem("organizationId", response.data.account.organizationId)
+            localStorage.setItem("hash", response.data.adicionalAccountData.accountHash)
             let res = await requestGet("/users/creditcarddata/" + response.data.creditCart.creditCardAccountId + "?organizationId=" + response.data.account.organizationId + "&customerId=" + response.data.account.customerId, token)
             if(res.status == 200){
                 // console.log("\naqui temos2: ", res.data)
@@ -53,7 +56,9 @@ export default function ClientPage(){
                 responseFinance.data.map(fatura => {
                     faturaAtual = faturaAtual + fatura.brazilianAmount
                 })
+                console.log("\naqui no erro:", faturaAtual.toFixed(2))
                 setFaturaAtual(faturaAtual.toFixed(2))
+                setCreditoGanho(Math.trunc(faturaAtual/2))
             }else{
                 alert("Houve um erro no momento, tente novamente mais tarde")
                 navigate("/login")
