@@ -5,6 +5,7 @@ import HomePage from './pages/Homepage/index'
 import Register from './pages/Register';
 import LoginPage from './pages/Login/index'
 import ClientPage from './pages/ClientPage/index'
+import EnviarCreditos from './pages/EnviarCreditos/index'
 
 const RoutesPages = () => (
     <BrowserRouter>
@@ -13,6 +14,7 @@ const RoutesPages = () => (
             <Route path="/register" element={<Register/>}/>
             <Route exact path="login" element={<LoginPage />} />
             <Route exact path="client" element={<ClientPage />} />
+            <Route exact path="enviarCreditos" element={<EnviarCreditos />} />
         </Routes>
     </BrowserRouter>       
 );

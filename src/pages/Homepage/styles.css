@@ -22,26 +22,35 @@
 }
 
 .home-container div img{
-    width: 150px;
     object-fit: cover;
     overflow: hidden;
 }
 
 .home-container div h1{
-    font-size: 30px;
+    font-size: 23px;
+    line-height: 29.23px;
     margin-top: 20px;
 }
 
 .home-container div p{
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 2px;
 }
 
+.home-container div a{
+    max-width: 500px;
+    width: 100%;
+    padding-left: 66px;
+    padding-right: 66px;
+}
+
 .home-container div button{
-    width: 200px;
+    max-width: 500px;
+    width: 100%;
     margin-top: 10px;
     border-radius: 20px;
-    height: 40px;
+    height: 58px;
+    font-size: 20px;
     transition: filter 0.3s;
 }
 
@@ -53,6 +62,7 @@
 
 .home-container div #login{
     /* background-color: #CBFF8C; */
+    margin-top: 20px;
     text-align: center;
     border: solid 1.5px;
 }

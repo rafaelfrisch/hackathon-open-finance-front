@@ -1,3 +1,7 @@
+body{
+    background-color: #f5f5f5;
+}
+
 .clientPage-container{
     display: flex;
     flex-direction: column;
@@ -12,11 +16,17 @@
     padding-left: 30px;
     padding-right: 30px;
     margin-bottom: 20px;
+}
+
+.clientPage-container .cartao-container section{
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
-.clientPage-container .cartao-container p{
+.clientPage-container .cartao-container section p{
     margin-left: 10px;
 }

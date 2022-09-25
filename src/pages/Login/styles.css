@@ -1,9 +1,11 @@
+body{
+    background-color: #fff;
+}
+
 .loginpage-container{
     position: absolute;
-    top: 28%;
+    top: 5%;
     left: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
     right: 0;
     display: flex;
     margin-right: auto;
@@ -19,11 +21,15 @@
 }
 
 .loginpage-container .arrow-container{
-    position: absolute;
-    top: 5%;
-    left: 5%;
     justify-content: left;
     width: 100%;
+    margin-left: 10%;
+    transition: filter 0.3s;
+}
+
+.loginpage-container .arrow-container:hover{
+    filter: brightness(75%);
+    cursor: pointer;
 }
 
 .loginpage-container .logo-arrow{
@@ -37,7 +43,13 @@
     display: block;
 }
 
+.loginpage-container h1{
+    font-size: 23px;
+}
 
+.loginpage-container p{
+    font-size: 16px;
+}
 
 @media (min-width: 500px){
     .loginpage-container{

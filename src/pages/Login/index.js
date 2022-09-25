@@ -23,25 +23,25 @@ export default function LoginPage(){
                 onClick={ () => history(-1)}
                 />
             </div>
-                <img src={Arvore} />
-                
-                <h1>Carbon Cash</h1>
-                <p>Save Carbon Earn Money</p>
+            <img src={Arvore} />
+            
+            <h1>Carbon Cash</h1>
+            <p>Save Carbon Earn Money</p>
 
-                <InputContainer text={"Entrar"} inputProps={{
-                    placeholder: "Digite seu email",
-                    type: "text",
-                    onChange: (e) => setEmail(e.target.value),
-                    value: email
-                }} />
+            <InputContainer text={"Entrar"} inputProps={{
+                placeholder: "Digite seu email",
+                type: "text",
+                onChange: (e) => setEmail(e.target.value),
+                value: email
+            }} />
 
-                <InputContainer text={"Senha"} inputProps={{
-                    placeholder: "Senha",
-                    type: "password",
-                    onChange: (e) => setPassword(e.target.value),
-                    value: password
-                }} />
-                <ButtonGreen text={"Entrar"} handleSubmit={handleSubmit} />
+            <InputContainer text={"Senha"} inputProps={{
+                placeholder: "Senha",
+                type: "password",
+                onChange: (e) => setPassword(e.target.value),
+                value: password
+            }} />
+            <ButtonGreen text={"Entrar"} handleSubmit={handleSubmit} />
 
         </div>
     )

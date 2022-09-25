@@ -45,6 +45,9 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .transferenciaCliente-container .saque-compra p{
