@@ -1,5 +1,5 @@
 .faturaCliente-container{
-    max-width: 500px;
+    max-width: 760px;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -16,6 +16,7 @@
 .faturaCliente-container .fatura{
     background-color: #f5f5f5;
     margin-top: 10px;
+    margin-bottom: 20px;
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -32,7 +33,7 @@
 .faturaCliente-container .fatura #pFatura,
 .faturaCliente-container .fatura #pCredito{
     font-size: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .faturaCliente-container .fatura #pNumberFatura{

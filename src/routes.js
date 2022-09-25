@@ -11,6 +11,7 @@ import SacarCreditos from './pages/SacarCreditos/index'
 import ProdutosEServicos from './pages/ProdutosEServicos/index'
 import ChartPage from './pages/Chart';
 import CardsPage from './pages/Cards';
+import ProtectedRoute from './privateRoute'
 
 const RoutesPages = () => (
     <BrowserRouter>
@@ -18,13 +19,41 @@ const RoutesPages = () => (
             <Route path="/" element={<HomePage />} />
             <Route exact path="register" element={<Register/>}/>
             <Route exact path="login" element={<LoginPage />} />
-            <Route exact path="client" element={<ClientPage />} />
-            <Route exact path="enviarCreditos" element={<EnviarCreditos />} />
-            <Route exact path="receberCreditos" element={<ReceberCreditos />} />
-            <Route exact path="sacarCreditos" element={<SacarCreditos />} />
-            <Route exact path="produtosEServicos" element={<ProdutosEServicos />} />
-            <Route exact path ="chart" element={<ChartPage/>}/>
-            <Route exact path = "cards" element={<CardsPage/>}/>
+            <Route exact path = "cards" element={
+            <ProtectedRoute>
+                <CardsPage/>
+            </ProtectedRoute>
+            }/>
+            <Route exact path="client" element={
+                <ProtectedRoute>
+                    <ClientPage />
+                </ProtectedRoute>
+            } />
+            <Route exact path="enviarCreditos" element={
+            <ProtectedRoute>
+                <EnviarCreditos/>
+            </ProtectedRoute>
+             } />
+            <Route exact path="receberCreditos" element={
+            <ProtectedRoute>
+                <ReceberCreditos/>
+            </ProtectedRoute>
+             } />
+            <Route exact path="sacarCreditos" element={
+            <ProtectedRoute>
+                <SacarCreditos/>
+            </ProtectedRoute>
+             } />
+            <Route exact path="produtosEServicos" element={
+            <ProtectedRoute>
+                <ProdutosEServicos/>
+            </ProtectedRoute>
+             } />
+            <Route exact path ="chart" element={
+            <ProtectedRoute>
+                <ChartPage/>
+            </ProtectedRoute>
+            }/>
         </Routes>
     </BrowserRouter>       
 );

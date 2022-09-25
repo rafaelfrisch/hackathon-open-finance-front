@@ -1,23 +1,13 @@
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({ element: Component, ...rest }) => {
-    let logged = localStorage.getItem("logged") 
-    if( logged == 1 || logged == "1" ){
-        alert("Faça o login para acessar essa página")
-        return(
-            <Route {...rest} render={(props) => (
-                <Component {...props} />
-            )} />
-        )
+const ProtectedRoute = ({ user, children }) => {
+    let local = localStorage.getItem("logged")
+    if (!(local == 1) || !(local == "1")) {
+      return <Navigate to="/login" replace />;
     }
-    
-    return(
-        <Route {...rest} render={(props) => (
-            <Navigate to='/login' />
-        )} element={<Navigate to="/" replace />} />
-        
-    )
-}
   
-export default PrivateRoute
+    return children;
+  };
+  
+export default ProtectedRoute
