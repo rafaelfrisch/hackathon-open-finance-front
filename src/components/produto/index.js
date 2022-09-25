@@ -21,13 +21,13 @@ function containList(name, listItems){
 function getIconProduto(name){
     let icon = null
     let nameLowerCase = name.toLowerCase()
-    if(containList(nameLowerCase, ["uber", "99pop", "indriver", "car", "carro", "bus", "onibus", "transporte"])) icon = carIcon
+    if(containList(nameLowerCase, ["uber", "99pop", "indriver", "car", "carro", "bus", "onibus", "transporte", "taxi", "pedágio"])) icon = carIcon
     else if(containList(nameLowerCase, ["renner", "riachuelo", "roupa", "centauro"])) icon = clothesIcon
-    else if(containList(nameLowerCase, ["ferramenta", "leroy", "cassol", "operacoes", "obras"])) icon = ferramentasIcon
+    else if(containList(nameLowerCase, ["ferramenta", "leroy", "cassol", "operacoes", "obras", "servi"])) icon = ferramentasIcon
     else if(containList(nameLowerCase, ["present", "gift"])) icon = giftIcon
     else if(containList(nameLowerCase, ["plane", "azul", "gol", "latam", "airline", "aviao", "milha"])) icon = planeIcon
     else if(containList(nameLowerCase, ["shopping", "compra", "shopee", "mercado livre", "mercado"])) icon = shopIcon
-    else if(containList(nameLowerCase, ["food", "comida", "restaurante", "lanchonete", "rappi"])) icon = foodIcon
+    else if(containList(nameLowerCase, ["food", "comida", "restaurante", "lanchonete", "rappi", "alimentação"])) icon = foodIcon
     else icon = geralIcon
     return icon
 }

@@ -24,7 +24,7 @@ export default function LoginPage(){
         localStorage.setItem("cpf", userData.cpf)
         localStorage.setItem("token", userData.token)
         
-        history("client")
+        history("/client")
     }
 
     return(

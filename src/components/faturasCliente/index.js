@@ -16,8 +16,8 @@ export default function FaturasCliente({rangeDate, faturaAtual, creditoGanho}){
                     </section>
                     <p id="pFatura">Fatura atual</p>
                     <section className="numberFatura">
-                        <p id="pNumberFatura">R$ {faturaAtual}</p>
-                        <p id="pCents">,00</p>
+                        <p id="pNumberFatura">R$ {faturaAtual.toFixed(0)}</p>
+                        <p id="pCents">,{((faturaAtual*100)%100).toFixed(0)}</p>
                     </section>
                     <p id="pCredito">Crédito a ser gerado</p>
                     <section className="creditoGerado">
