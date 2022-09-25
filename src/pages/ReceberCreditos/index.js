@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import './styles.css'
 import {IoIosArrowBack} from "react-icons/io"
-import ReceberIconSet from '../../assets/receberIconSet.svg'
+import ReceberIconSet from '../../assets/content-copy.svg'
 import { useNavigate } from 'react-router-dom'
 
 export default function ReceberCreditos(){
-
     const history = useNavigate();
 
-    const handleSubmit = () => {};
+    const handleSubmit = () => {
+      navigator.clipboard.writeText(conta)
+      alert("Conta copiada com sucesso")
+    };
 
-    const conta = "xxxx xxxx xxxx xxxx"
+    const conta = localStorage.getItem("hash")
 
     return(
         <div className="receberCreditos-container">

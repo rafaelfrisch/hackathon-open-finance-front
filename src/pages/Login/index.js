@@ -18,7 +18,7 @@ export default function LoginPage(){
         const userData = await signInService(email, password);
 
         localStorage.setItem("logged", 1)
-        localStorage.setItem("cpf", userData.cpf)
+        localStorage.setItem("cpf", userData.user.cpf)
         localStorage.setItem("token", userData.token)
         
         history("/client")
