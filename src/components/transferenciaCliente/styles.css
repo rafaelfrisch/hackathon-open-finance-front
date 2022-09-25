@@ -1,5 +1,5 @@
 .transferenciaCliente-container{
-    max-width: 500px;
+    max-width: 760px;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -14,8 +14,7 @@
 .transferenciaCliente-container .transferencia{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 10px;
 }
@@ -29,28 +28,30 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    max-width: 250px;
-    width: 90%;
+    /* max-width: 250px; */
+    /* width: 100%; */
     height: 82px;
     border-radius: 5px;
 }
 
 .transferenciaCliente-container .transferencia a #enviar-credito{
     background-color: #CBFF8C;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .transferenciaCliente-container .transferencia a #receber-credito{
     background-color: #73F689;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .transferenciaCliente-container .saque-compra{
     margin-top: 20px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: #fff;
     padding: 5px;
+    height: 46px;
     border-radius: 5px;
 }
 

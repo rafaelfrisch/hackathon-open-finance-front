@@ -1,5 +1,5 @@
 .input-container{
-    max-width: 500px;
+    max-width: 760px;
     margin-top: 15px;
     padding-left: 30px;
     padding-right: 30px;
@@ -22,7 +22,7 @@
     outline: none;
     color: #4d4d4d;
     padding: 5px;
-    max-width: 500px;
+    max-width: 760px;
     width: 100%;
     
 }

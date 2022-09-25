@@ -1,7 +1,3 @@
-body{
-    background-color: #fbfbfb;
-}
-
 .sacarCreditos-container{
     position: absolute;
     top: 5%;
@@ -10,7 +6,7 @@ body{
     left: 0;
     right: 0;
     display: flex;
-    max-width: 500px;
+    max-width: 760px;
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -82,7 +78,7 @@ body{
 .sacarCreditos-container button{
     background-image: linear-gradient(to left, #73F689, #CBFF8C);
     width: 100%;
-    max-width: 500px;
+    max-width: 760px;
     height: 28px;
     border-radius: 4px;
     transition: filter 0.3s;
@@ -95,7 +91,7 @@ body{
     filter: brightness(75%);
 }
 
-@media (min-width: 500px){
+@media (min-width: 760px){
     .sacarCreditos-container{
         margin-top: 25px;
     }
