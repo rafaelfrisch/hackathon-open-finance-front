@@ -10,12 +10,13 @@ import ReceberCreditos from './pages/ReceberCreditos/index'
 import SacarCreditos from './pages/SacarCreditos/index'
 import ProdutosEServicos from './pages/ProdutosEServicos/index'
 import ChartPage from './pages/Chart';
+import CardsPage from './pages/Cards';
 
 const RoutesPages = () => (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<Register/>}/>
+            <Route exact path="register" element={<Register/>}/>
             <Route exact path="login" element={<LoginPage />} />
             <Route exact path="client" element={<ClientPage />} />
             <Route exact path="enviarCreditos" element={<EnviarCreditos />} />
@@ -23,6 +24,7 @@ const RoutesPages = () => (
             <Route exact path="sacarCreditos" element={<SacarCreditos />} />
             <Route exact path="produtosEServicos" element={<ProdutosEServicos />} />
             <Route exact path ="chart" element={<ChartPage/>}/>
+            <Route exact path = "cards" element={<CardsPage/>}/>
         </Routes>
     </BrowserRouter>       
 );

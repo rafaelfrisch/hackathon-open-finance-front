@@ -1,10 +1,12 @@
+
 body{
     background-color: #fff;
 }
 
 .register-container{
     position: absolute;
-    top: 5%;
+    background: #FBFBFB;
+    padding-top: 5%;
     left: 0;
     right: 0;
     padding-left: 30px;

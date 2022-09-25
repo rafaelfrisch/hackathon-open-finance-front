@@ -2,19 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  font-family: 'Spinnaker', sans-serif;
 }
 
-code {
-  font-family: 'Montserrat', sans-serif
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #FFFFFF;
 }
 
 h1, h2, h3, h4, p, span{
-  font-family: 'Montserrat', sans-serif;
   color: #4b4947;
 }
 

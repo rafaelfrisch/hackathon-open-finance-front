@@ -1,0 +1,128 @@
+
+body{
+    background: #FFFFFF;
+}
+
+.cardspage-container{
+    position: absolute;
+    background: #FBFBFB;
+    padding-top: 5%;
+    left: 0;
+    right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.cardspage-container .arrow-container{
+    justify-content: left;
+    width: 100%;
+    margin-left: -5%;
+    transition: filter 0.3s;
+}
+
+.cardspage-container .arrow-container:hover{
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+.cardspage-container .logo-arrow{
+    font-size: 35px;
+    color: #B6B1AC
+}
+
+.cardspage-container h1{
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.cardspage-container .cards-content{
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cardspage-container .cards-content .card-line{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    width: 100%;
+}
+.cardspage-container .cards-content .card-line .card{
+    width: 55%;
+    height: 138px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    text-align: center;
+    margin-right: 10px;
+}
+.card img{
+    position: relative;
+    top: 0;
+    left: 0;
+    grid-area: 1/1;
+}
+
+.card p{
+    position: inherit;
+    left: 0;
+    right: 0;
+    font-size: 18px;
+    font-weight: bold;
+    grid-area: 1/1;
+    z-index: 1;
+    align-items: center;
+    color: #FFFFFF
+}
+
+
+.cards-content .cards-content .card-line .card-info{
+    height: 138px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.logo-value-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo-value-card img{
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+}
+.logo-value-card p{
+    display: block;
+}
+
+.card-info .date-info{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.card-info .label-info{
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.card-info .info-money{
+    font-size: 20px;
+}
