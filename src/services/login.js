@@ -2,13 +2,15 @@ import axios from 'axios';
 import { apiUrl } from '../constants';
 
 const signIn = async (email, password) => {
-
-  const res = await axios.post(apiUrl + '/users/login', {
+  let ans = {}
+  await axios.post(apiUrl + '/users/login', {
     email,
     password,
-  })
-
-  return res.data;
+  }).then(response =>{
+    console.log(response.data)
+    ans = response.data;
+  }).catch(err => console.log(err));
+  return ans;
 };
 
 export default signIn;
