@@ -9,8 +9,8 @@ body{
     padding-top: 5%;
     left: 0;
     right: 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     width: 100%;
     max-width: 500px;
     margin-right: auto;
@@ -50,25 +50,26 @@ body{
 .cardspage-container .cards-content{
     width: 100%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
 .cardspage-container .cards-content .card-line{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 30px;
     margin-top: 20px;
+    width: 100%;
 }
 .cardspage-container .cards-content .card-line .card{
-    width: 60%;
+    width: 55%;
     height: 138px;
     display: flex;
     justify-content: center;
     align-items: center;
     display: grid;
     text-align: center;
+    margin-right: 10px;
 }
 .card img{
     position: relative;
@@ -118,10 +119,10 @@ body{
 }
 
 .card-info .label-info{
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 400;
 }
 
 .card-info .info-money{
-    font-size: 24px;
+    font-size: 20px;
 }
