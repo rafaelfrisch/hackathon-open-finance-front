@@ -15,10 +15,7 @@ export default function LoginPage(){
     const history = useNavigate();
 
     async function handleSubmit(){
-        const userData = await signInService({
-          email,
-          password,
-        });
+        const userData = await signInService(email, password);
 
         localStorage.setItem("logged", 1)
         localStorage.setItem("cpf", userData.cpf)
