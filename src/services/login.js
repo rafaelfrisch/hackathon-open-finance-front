@@ -10,6 +10,7 @@ const signIn = async (email, password) => {
     console.log(response.data)
     ans = response.data;
   }).catch(err => console.log(err));
+  
   return ans;
 };
 
