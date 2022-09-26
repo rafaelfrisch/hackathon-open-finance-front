@@ -37,9 +37,15 @@ export default function ProdutosEServicos(){
     //     return [billId, idAux]
     // }
 
+    function convertCpf(cpf){
+      let newCpf = ""
+      newCpf = cpf.slice(0, 3) + "." + cpf.slice(3, 6) + "." + cpf.slice(6,9) + "-" + cpf.slice(9,11)
+      return newCpf
+    }
+
     async function getMesFatura(){
         let token = localStorage.getItem("token")
-        let cpf = localStorage.getItem("cpf")
+        let cpf = convertCpf(localStorage.getItem("cpf"))
         let accountId = localStorage.getItem("creditCardAccountId")
         let orgId = localStorage.getItem("organizationId")
         let res = await requestGet("/users/creditcarddata/" + accountId + "?organizationId=" + orgId + "&customerId=" + cpf, token)
@@ -54,7 +60,7 @@ export default function ProdutosEServicos(){
 
     async function getProdutos(billId){
         let token = localStorage.getItem("token")
-        let cpf = localStorage.getItem("cpf")
+        let cpf = convertCpf(localStorage.getItem("cpf"))
         let accountId = localStorage.getItem("creditCardAccountId")
         let orgId = localStorage.getItem("organizationId")
         console.log("\nantes")
